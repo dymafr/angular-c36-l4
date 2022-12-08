@@ -1,5 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { Map } from 'mapbox-gl';
+import * as mapboxgl from 'mapbox-gl';
 
 @Component({
   selector: 'app-input-address',
@@ -9,12 +9,12 @@ import { Map } from 'mapbox-gl';
 export class InputAddressComponent implements AfterViewInit {
   private accessToken =
     'pk.eyJ1IjoiZHltYWZyIiwiYSI6ImNsODNjMmp4MTAwY2UzcHA4ZWhmaG5sNDAifQ.ozVmzxmotxaZbXfnvHKYDw';
-  private map!: any;
+  private map!: mapboxgl.Map;
 
   constructor() {}
 
   ngAfterViewInit() {
-    this.map = Map({
+    this.map = new mapboxgl.Map({
       accessToken: this.accessToken,
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11',
