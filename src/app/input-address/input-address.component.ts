@@ -1,5 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
-import * as mapboxgl from 'mapbox-gl';
+import mapboxgl from 'mapbox-gl';
 
 @Component({
   selector: 'app-input-address',
